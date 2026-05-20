@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rushil Maharjan | Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #111827;
+      --text: #e2e8f0;
+      --accent: #38bdf8;
+      --muted: #94a3b8;
+      --radius: 18px;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.16), transparent 28%),
+        linear-gradient(180deg, #020617 0%, #0f172a 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    .container {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .brand {
+      display: grid;
+      gap: 0.35rem;
+    }
+    .brand strong {
+      font-size: 1.5rem;
+    }
+    .brand span {
+      color: var(--muted);
+    }
+    .nav-toggle,
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      border: 1px solid rgba(226, 232, 240, 0.24);
+      background: rgba(15, 23, 42, 0.85);
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+    }
+    nav {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    section {
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 1.75rem;
+      backdrop-filter: blur(20px);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .profile-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 1rem;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+    }
+    .profile-image {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
+      object-fit: cover;
+      display: block;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      letter-spacing: -0.05em;
+      max-width: 13ch;
+    }
+    .hero p {
+      max-width: 68ch;
+      color: var(--muted);
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1.35rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+    }
+    .card strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.5rem;
+    }
+    .skills li,
+    .projects li {
+      margin-bottom: 0.75rem;
+      color: var(--muted);
+    }
+    .projects li span {
+      display: inline-flex;
+      margin-left: 0.5rem;
+      color: var(--accent);
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.95rem 1.3rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #38bdf8, #06b6d4);
+      color: #020617;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .button:hover {
+      transform: translateY(-2px);
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .hidden {
+      display: none;
+    }
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .stats {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: clamp(2.2rem, 8vw, 3.2rem);
+      }
+    }
+    @media (max-width: 640px) {
+      header {
+        align-items: stretch;
+      }
+      .nav-toggle {
+        display: inline-flex;
+      }
+      nav {
+        width: 100%;
+        flex-direction: column;
+      }
+      nav.hidden {
+        display: none;
+      }
+      .brand {
+        width: 100%;
+      }
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <strong>Rushil Maharjan</strong>
+        <span>Web Developer | Portfolio</span>
+      </div>
+      <button class="nav-toggle" id="navToggle">Menu</button>
+      <nav id="navMenu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="home">
+      <div>
+        <p>Hi, I’m Rushil. I build responsive websites and simple web apps with clean, modern design.</p>
+        <h1>Portfolio of Rushil Maharjan</h1>
+        <p>I specialize in creating responsive layouts, interactive UI, and polished web experiences using HTML, CSS, and JavaScript.</p>
+        <div class="stats">
+          <div class="card">
+            <strong>4+</strong>
+            <span>Interactive projects</span>
+          </div>
+          <div class="card">
+            <strong>Responsive</strong>
+            <span>Mobile-first design</span>
+          </div>
+          <div class="card">
+            <strong>Fast</strong>
+            <span>Optimized for performance</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-card">
+        <img src="Image.jpg" alt="Photo of Rushil Maharjan" class="profile-image" />
+      </div>
+      <div class="card" style="background: rgba(56, 189, 248, 0.08);">
+        <h2>Quick facts</h2>
+        <p>I enjoy building user-friendly websites that scale smoothly across phones, tablets, and desktops.</p>
+        <ul class="skills">
+          <li>Responsive design with CSS grid and flexbox</li>
+          <li>Interactive UI using JavaScript</li>
+          <li>Clean visual style with accessible typography</li>
+        </ul>
+        <button class="button" id="learnMore">Learn More</button>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="grid-2">
+        <div>
+          <p>My name is <strong>Rushil Maharjan</strong>. I create responsive portfolio websites and simple web applications with a focus on usability and performance.</p>
+          <p>I love exploring new web technologies and turning ideas into fast, beautiful experiences users enjoy.</p>
+        </div>
+        <div>
+          <div class="card">
+            <strong>Contact</strong>
+            <p>Email: <a href="mailto:rushil@example.com" style="color: var(--accent);">rushil@example.com</a></p>
+            <p>Location: Nepal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Technical</h3>
+          <ul class="skills">
+            <li>HTML5 & CSS3</li>
+            <li>JavaScript / DOM scripting</li>
+            <li>Responsive layouts with CSS Grid</li>
+            <li>Mobile-first design</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <ul class="skills">
+            <li>Visual Studio Code</li>
+            <li>Git & GitHub</li>
+            <li>Browser developer tools</li>
+            <li>Performance optimization</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="projects">
+        <li>Portfolio Website <span>Responsive Web Design</span></li>
+        <li>Interactive Quiz App <span>JavaScript Logic</span></li>
+        <li>Landing Page Design <span>Modern UI</span></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Want to connect or discuss a project? Send a message and I’ll get back to you soon.</p>
+      <button class="button" id="contactMe">Email Me</button>
+    </section>
+
+    <footer>
+      <p>© <span id="currentYear"></span> Rushil Maharjan. Built with HTML, CSS, and JavaScript.</p>
+    </footer>
+  </div>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    const currentYear = document.getElementById('currentYear');
+    const learnMore = document.getElementById('learnMore');
+    const contactMe = document.getElementById('contactMe');
+
+    currentYear.textContent = new Date().getFullYear();
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
+
+    learnMore.addEventListener('click', () => {
+      document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    contactMe.addEventListener('click', () => {
+      window.location.href = 'mailto:rushil@example.com';
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 640 && navMenu.classList.contains('hidden')) {
+        navMenu.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
